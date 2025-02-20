@@ -1,1 +1,40 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muxtorch - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.jpg" alt="Muxtorch Logo" class="logo">
+        <div class="background"></div>
+        <h1>Welcome to Muxtorch</h1>
+        <p>This is a delivery platform aimed at bridging the gap between customers and their grocery shops, restaurants, and other business centers.</p>
+        <p>We provide delivery with super speed, trustworthiness, and diligence to make your experience seamless.</p><h2>Terms and Conditions</h2>
+    <div class="terms">
+        <ol>
+            <li>Please specify your exact location.</li>
+            <li>Be kind to the delivery officer to ensure mutual respect.</li>
+            <li>You can tip the officer, but do not pay extra charges.</li>
+            <li>Using a false location to reduce fees will result in automatic extra charges.</li>
+            <li>Canceling an order last-minute will incur a fee.</li>
+            <li>Do not entrust officers with high-value packages like cash, wallets, or jewelry.</li>
+            <li>Officers are not allowed to deliver biological packages, cash, wallets, or jewelry.</li>
+            <li>If the officer is rude or disrespectful, report it to customer support.</li>
+        </ol>
+    </div>
+    
+    <label><input type="checkbox" id="acceptTerms"> I accept the terms and conditions</label>
+    <button id="startButton" disabled onclick="location.href='registration.html'">Start</button>
+</div>
 
+<script>
+    document.getElementById("acceptTerms").addEventListener("change", function() {
+        document.getElementById("startButton").disabled = !this.checked;
+    });
+</script>
+
+</body>
+</html>
