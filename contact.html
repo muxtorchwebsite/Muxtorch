@@ -1,13 +1,14 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muxtorch - Contact Center</title>
+    <title>Muxtorch - FAQ</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-        background: linear-gradient(to right, #0052D4, #FFA500);
+            background: linear-gradient(to right, #0052D4, #FFA500);
             color: white;
             font-family: 'Poppins', sans-serif;
             text-align: center;
@@ -15,33 +16,63 @@
             padding: 0;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
             padding: 20px;
-            text-align: center;
         }
-        .contact-info {
-            font-size: 18px;
-            margin-top: 20px;
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
-        .contact-info p {
-            margin: 5px 0;
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
         }
     </style>
+    <script>
+        function toggleFAQ(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = (answer.style.display === "block") ? "none" : "block";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <img src="logo.jpg" alt="Muxtorch Logo" class="logo">
-        <div class="background"></div>
-        <h1>Contact Us</h1>
-        <div class="contact-info">
-            <p><strong>Phone/WhatsApp:</strong> +233535424460</p>
-            <p><strong>Email:</strong> muxtorchdelivery@gmail.com</p>
-            <p><strong>Facebook:</strong> @muxtorch</p>
-            <p><strong>Instagram:</strong> @muxtorch</p>
-            <p><strong>X:</strong> @muxtorch</p>
-            <p><strong>TikTok:</strong> @muxtorch</p>
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item" onclick="toggleFAQ('faq1')">
+            <h3>1. How do I place an order?</h3>
+            <p id="faq1" class="faq-answer">You can place an order by selecting a service on our website and providing the required details.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ('faq2')">
+            <h3>2. What are the delivery options?</h3>
+            <p id="faq2" class="faq-answer">We offer Express Delivery, Courier Delivery, and 2-Hour Delivery.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ('faq3')">
+            <h3>3. How can I track my delivery?</h3>
+            <p id="faq3" class="faq-answer">Once your order is placed, you will receive a tracking link via SMS or email.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ('faq4')">
+            <h3>4. What payment methods do you accept?</h3>
+            <p id="faq4" class="faq-answer">We accept mobile money, credit/debit cards, and cash on delivery.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ('faq5')">
+            <h3>5. How do I contact customer support?</h3>
+            <p id="faq5" class="faq-answer">You can reach us via WhatsApp, email, or social media (@muxtorch).</p>
         </div>
     </div>
 </body>
