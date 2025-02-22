@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,12 @@
 <body>
     <div class="container">
         <img src="logo.jpg" alt="Muxtorch Logo" class="logo">
-        <div class="background"></div>
         <h1>Choose a Service</h1>
-        <ul>
-            <li><button onclick="location.href='order.html?type=express'">Express Delivery (Fastest, single parcel)</button></li>
-            <li><button onclick="location.href='order.html?type=courier'">Courier Delivery (2-3 packages)</button></li>
-            <li><button onclick="location.href='order.html?type=two_hour'">2-Hour Delivery (Multiple packages)</button></li>
-        </ul>
+        <div class="service-buttons">
+            <button class="service-btn" onclick="location.href='order.html?type=express'">Express Delivery</button>
+            <button class="service-btn" onclick="location.href='order.html?type=courier'">Courier Delivery</button>
+            <button class="service-btn" onclick="location.href='order.html?type=two_hour'">2-Hour Delivery</button>
+        </div>
     </div>
 </body>
-</html>
+    </html>
