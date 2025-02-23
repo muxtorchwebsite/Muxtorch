@@ -8,8 +8,10 @@
         body {
             background: linear-gradient(to right, #0f172a, #1e293b);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 90%;
@@ -41,12 +43,12 @@
         .start-btn:hover, .service-btn:hover {
             transform: scale(1.05);
         }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 5px;
+        .faq-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0f172a;
+            border-radius: 10px;
+            text-align: left;
         }
     </style>
 </head>
@@ -55,8 +57,8 @@
         <header>
             <h1>MUXTORCH</h1>
             <p>Express & Delivery - Single Parcels</p>
-        </header><section class="card">
-        <div class="app-screen">
+        </header>
+        <section class="card">
             <h2>MUXTORCH</h2>
             <button class="start-btn" onclick="startApp()">START</button>
             <form id="registration-form">
@@ -74,14 +76,15 @@
                 <input type="text" id="national-id" placeholder="Enter ID" required>
                 <button type="submit" class="start-btn">Register</button>
             </form>
-        </div>
-    </section>
-    
-    <section class="services">
-        <h2>Services</h2>
-        <button class="service-btn" onclick="selectService('Express Delivery')">Express Delivery</button>
-        <button class="service-btn" onclick="selectService('Courier Delivery')">Courier Delivery</button>
-        <button class="service-btn" onclick="selectService('2-Hour Delivery')">2-Hour Delivery</button>
+        </section>
+        <section class="services">
+            <h2>Services</h2>
+            <button class="service-btn" onclick="selectService('Express Delivery')">Express Delivery</button>
+            <button class="service-btn" onclick="selectService('Courier Delivery')">Courier Delivery</button>
+            <button class="service-btn" onclick="selectService('2-Hour Delivery')">2-Hour Delivery</button>
+        </section><section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div id="faq-content">Loading FAQ...</div>
     </section>
 </div>
 
@@ -108,35 +111,18 @@
             alert('Please fill in all required fields.');
         }
     });
+
+    // Load FAQ from faq.html
+    fetch('faq.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('faq-content').innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById('faq-content').innerHTML = 'Failed to load FAQ.';
+            console.error('Error loading FAQ:', error);
+        });
 </script>
 
 </body>
-</html>document.addEventListener("DOMContentLoaded", function () { const orderForm = document.getElementById("orderForm");
-
-if (orderForm) {
-    orderForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Order Created Successfully!");
-        window.location.href = "contact.html";
-    });
-}
-
-const locationInput = document.getElementById("senderLocation");
-if (locationInput) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function (position) {
-                locationInput.value = `Lat: ${position.coords.latitude}, Lng: ${position.coords.longitude}`;
-            },
-            function (error) {
-                console.warn("Error getting location: ", error.message);
-            }
-        );
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
-
-});
-
-
+</html>
